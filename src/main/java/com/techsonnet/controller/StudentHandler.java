@@ -1,5 +1,6 @@
 package com.techsonnet.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.techsonnet.pojo.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,7 +17,7 @@ public class StudentHandler {
     @ResponseBody
     public String login(@Validated @RequestBody Student student, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return bindingResult.getAllErrors().toString();
+            return JSON.toJSONString(bindingResult.getAllErrors());
         }
         return "ok";
     }

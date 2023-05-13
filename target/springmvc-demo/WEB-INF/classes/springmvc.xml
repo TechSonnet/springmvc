@@ -29,7 +29,7 @@
 
 
 
-    <mvc:annotation-driven conversion-service="conversionService" validator="studentValidator">
+    <mvc:annotation-driven conversion-service="conversionService" >
         <!-- 消息转换器 -->
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -46,6 +46,6 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     </bean>
 
-    <bean id="studentValidator" class="com.techsonnet.validator.StudentValidator"></bean>
+<!--    <bean id="studentValidator" class="com.techsonnet.validator.StudentValidator"></bean>-->
 
 </beans>
